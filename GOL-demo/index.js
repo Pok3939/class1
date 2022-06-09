@@ -38,6 +38,7 @@ function init() {
   }
 }
 
+
 function draw() {
   background(255);
   generate();
@@ -46,13 +47,16 @@ function draw() {
       if (currentBoard[i][j] == 1) {
         fill(boxColor);
       } else {
-        fill(255);
+        fill(100);
       }
       stroke(strokeColor);
       rect(i * unitLength, j * unitLength, unitLength, unitLength);
     }
   }
 }
+
+// function pattern1() { for (let i =15, let j =12)
+// }
 
 function generate() {
   //Loop over every single box on the board
@@ -92,9 +96,9 @@ function generate() {
   // Swap the nextBoard to be the current Board
   [currentBoard, nextBoard] = [nextBoard, currentBoard];
 }
-function windowResized() {
-    resizeCanvas(windowWidth, windowHeight);
-}
+// function windowResized() {
+//     resizeCanvas(windowWidth, windowHeight);
+// }
 
 /**
  * When mouse is dragged
@@ -144,3 +148,10 @@ document.querySelector("#start-game").addEventListener("click", function () {
     loop()
   });
 
+  document.querySelector("#pattern1").addEventListener("click", function () {
+  pattern1()
+  });
+
+  // https://conwaylife.appspot.com/library
+  // https://www.samcodes.co.uk/project/game-of-life/
+  // https://medium.com/@ianschum/chromacon-a-highly-interactive-conways-game-of-life-built-in-javascript-627153f459ec
