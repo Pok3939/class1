@@ -5,15 +5,21 @@ let columns; /* To be determined by window width */
 let rows; /* To be determined by window height */
 let currentBoard;
 let nextBoard;
+let flag = false;
+
+document.querySelector(".btnbtn-dark").addEventListener("click", function () {
+  document.getElementById("b1").innerHTML = "<div></div>";
+  flag = true;
+});
 
 function setup() {
   /* Set the canvas to be under the element #canvas*/
-  const canvas = createCanvas(windowWidth, windowHeight - 100);
+  const canvas = createCanvas(1000, 1000);
   canvas.parent(document.querySelector("#canvas"));
 
   /*Calculate the number of columns and rows */
-  columns = floor(width / unitLength);
-  rows = floor(height / unitLength);
+  columns = floor(1000 / unitLength);
+  rows = floor(1000 / unitLength);
 
   /*Making both currentBoard and nextBoard 2-dimensional matrix that has (columns * rows) boxes. */
   currentBoard = [];
@@ -25,6 +31,10 @@ function setup() {
   // Now both currentBoard and nextBoard are array of array of undefined values.
   init(); // Set the initial values of the currentBoard and nextBoard
 }
+
+// function windowResized() {
+//   resizeCanvas(windowWidth, windowHeight);
+// }
 
 /**
  * Initialize/reset the board state
@@ -107,31 +117,40 @@ function mouseDragged() {
   /**
    * If the mouse coordinate is outside the board
    */
-  if (mouseX > unitLength * columns || mouseY > unitLength * rows) {
-    return;
+  if(flag){
+    if (mouseX > unitLength * columns || mouseY > unitLength * rows) {
+      return;
+    }
+    const x = Math.floor(mouseX / unitLength);
+    const y = Math.floor(mouseY / unitLength);
+    currentBoard[x][y] = 1;
+    fill(boxColor);
+    stroke(strokeColor);
+    rect(x * unitLength, y * unitLength, unitLength, unitLength);
   }
-  const x = Math.floor(mouseX / unitLength);
-  const y = Math.floor(mouseY / unitLength);
-  currentBoard[x][y] = 1;
-  fill(boxColor);
-  stroke(strokeColor);
-  rect(x * unitLength, y * unitLength, unitLength, unitLength);
+
 }
 
 /**
  * When mouse is pressed
  */
 function mousePressed() {
-  noLoop();
-  mouseDragged();
+  if(flag){
+    noLoop();
+    mouseDragged();
+  }
 }
 
 /**
  * When mouse is released
  */
 function mouseReleased() {
+  if(flag)
   noLoop();
 }
+
+
+
 document.querySelector("#reset-game").addEventListener("click", function () {
   init();
   draw();
@@ -152,6 +171,9 @@ document.querySelector("#start-game").addEventListener("click", function () {
   pattern1()
   });
 
+
+
+  
   // https://conwaylife.appspot.com/library
   // https://www.samcodes.co.uk/project/game-of-life/
   // https://medium.com/@ianschum/chromacon-a-highly-interactive-conways-game-of-life-built-in-javascript-627153f459ec

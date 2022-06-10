@@ -10,26 +10,59 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
     <link href="index.css" rel="stylesheet" />
     <title>Game of Life</title>
   </head>
   <body>
-    <div id="canvas"></div>
-    <button type="button" class="btn btn-primary" id="reset-game">
-      Reset game
-    </button>
-    <button type="button" class="btn btn-secondary" id="start-game">
-      Start game
-    </button>
-    <button type="button" class="btn btn-success" id="play">Play</button>
-    <button type="button" class="btn btn-danger" id="pause">Pause</button>
-    <button type="button" class="btn btn-danger" id="pattern1">PP</button>
+    <div class="welCome" id="b1">
+      <div class="sButton">
+        <button type="button" class="btnbtn-dark">Start</button>
+      </div>
+
+      <div class="stonebay">
+        <h1>---Game of Life---</h1>
+        <div class="typewriter">
+          <h5>Press "Start" when you are ready</h5>
+        </div>
+      </div>
+
+      <div class="cover"></div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div id="canvas" class="col"></div>
+      </div>
+      <div class="buttonBox">
+        <button type="button" class="btn btn-primary" id="reset-game">
+          Reset game
+        </button>
+
+        <button type="button" class="btn btn-secondary" id="start-game">
+          Start game
+        </button>
+
+        <button type="button" class="btn btn-success" id="play">Play</button>
+
+        <button type="button" class="btn btn-danger" id="pause">Pause</button>
+
+        <!-- <button type="button" class="btn btn-danger" id="pattern1">PP</button> -->
+      </div>
+    </div>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.js"></script>
+
     <script src="index.js"></script>
   </body>
 </html>
