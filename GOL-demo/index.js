@@ -5,7 +5,11 @@ let columns; /* To be determined by window width */
 let rows; /* To be determined by window height */
 let currentBoard;
 let nextBoard;
+let rectX = 0;
+let fr = 30; //starting FPS
+let clr;
 let flag = false;
+
 
 document.querySelector(".btnbtn-dark").addEventListener("click", function () {
   document.getElementById("b1").innerHTML = "<div></div>";
@@ -14,6 +18,7 @@ document.querySelector(".btnbtn-dark").addEventListener("click", function () {
 
 function setup() {
   /* Set the canvas to be under the element #canvas*/
+  frameRate(fr);
   const canvas = createCanvas(1000, 1000);
   canvas.parent(document.querySelector("#canvas"));
 
