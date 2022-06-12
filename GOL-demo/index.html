@@ -39,12 +39,15 @@
       <div id="canvas" class="col"></div>
     </div>
     <div class="colorBox">
-      <div class ="colorChoice"><h5>Color choice:</h5></div>
+      <div class="colorChoice">
+        <h5>Color choice:</h5>
+      </div>
       <div class="colorButton2"><button type="button" class="changeRed" id="redButton"></button>
-      <button type="button" class="changeBlue"></button>
-      <button type="button" class="changeYellow"></button>
-      <button type="button" class="changePurple"></button></div>
-      
+        <button type="button" class="changeBlue"></button>
+        <button type="button" class="changeYellow"></button>
+        <button type="button" class="changePurple"></button>
+      </div>
+
     </div>
     <div class="buttonBox">
       <button type="button" class="btn btn-primary" id="reset-game">
@@ -63,17 +66,23 @@
     </div>
   </div>
 
-  <div class="TTM"><h5>To infinity...</h5>
+  <div class="TTM">
+    <h5>To infinity...</h5>
     <div class="progress">
       <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="100" aria-valuemin="0"
         aria-valuemax="100"></div>
     </div>
+   
+    <div class="slidecontainer"> <h6>Speed control:</h6>
+      <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+    </div>
   </div>
+ 
   <script>
     var i = 0;
     var bar = document.querySelector(".progress-bar");
     function makeProgress() {
-      if (i <100) {
+      if (i < 100) {
         i = i + 1;
         bar.style.width = i + "%";
         bar.innerText = i + "%";
