@@ -1,6 +1,7 @@
 const unitLength = 20;
 const boxColor = 150;
 const strokeColor = 50;
+const redColor = 2;
 let columns; /* To be determined by window width */
 let rows; /* To be determined by window height */
 let currentBoard;
@@ -9,22 +10,28 @@ let rectX = 0;
 let fr = 30; //starting FPS
 let clr;
 let flag = false;
+// var ctx2 = document.getElementById("canvas2").getContext("2d");
+// let slider;
 
 
 document.querySelector(".btnbtn-dark").addEventListener("click", function () {
   document.getElementById("b1").innerHTML = "<div></div>";
   flag = true;
+  makeProgress();
 });
+
+
+
 
 function setup() {
   /* Set the canvas to be under the element #canvas*/
   frameRate(fr);
-  const canvas = createCanvas(1000, 1000);
+  const canvas = createCanvas(980, 800);
   canvas.parent(document.querySelector("#canvas"));
 
   /*Calculate the number of columns and rows */
-  columns = floor(1000 / unitLength);
-  rows = floor(1000 / unitLength);
+  columns = floor(980 / unitLength);
+  rows = floor(800 / unitLength);
 
   /*Making both currentBoard and nextBoard 2-dimensional matrix that has (columns * rows) boxes. */
   currentBoard = [];
@@ -62,13 +69,14 @@ function draw() {
       if (currentBoard[i][j] == 1) {
         fill(boxColor);
       } else {
-        fill(100);
+        fill(225);
       }
       stroke(strokeColor);
       rect(i * unitLength, j * unitLength, unitLength, unitLength);
     }
   }
 }
+
 
 // function pattern1() { for (let i =15, let j =12)
 // }
@@ -122,7 +130,7 @@ function mouseDragged() {
   /**
    * If the mouse coordinate is outside the board
    */
-  if(flag){
+  if (flag) {
     if (mouseX > unitLength * columns || mouseY > unitLength * rows) {
       return;
     }
@@ -136,11 +144,13 @@ function mouseDragged() {
 
 }
 
+
+
 /**
  * When mouse is pressed
  */
 function mousePressed() {
-  if(flag){
+  if (flag) {
     noLoop();
     mouseDragged();
   }
@@ -150,9 +160,24 @@ function mousePressed() {
  * When mouse is released
  */
 function mouseReleased() {
-  if(flag)
-  noLoop();
+  if (flag)
+    noLoop();
 }
+
+// let slider;
+// function setup() {
+//   canvas.parent(document.querySelector("#canvas2"));
+//   slider = createSlider(0, 255, 100);
+//   slider.position(10, 10);
+//   slider.style('width', '80px');
+// }
+
+// function draw() {
+//   let val = slider.value();
+//   background(val);
+//   canvas.parent(document.querySelector("#canvas2"));
+// }
+
 
 
 
@@ -160,25 +185,20 @@ document.querySelector("#reset-game").addEventListener("click", function () {
   init();
   draw();
 });
+
 document.querySelector("#start-game").addEventListener("click", function () {
-  loop(); if(querySelector("#reset-game") =true ) noLoop();
+  loop(); if (querySelector("#reset-game") = true) noLoop();
 });
 
-  document.querySelector("#pause").addEventListener("click", function () {
-    noLoop(); 
-  });
+document.querySelector("#pause").addEventListener("click", function () {
+  noLoop();
+});
 
-  document.querySelector("#play").addEventListener("click", function () {
-    loop()
-  });
+document.querySelector("#play").addEventListener("click", function () {
+  loop()
+});
 
-  document.querySelector("#pattern1").addEventListener("click", function () {
-  pattern1()
-  });
+document.querySelector(".redButton").addEventListener("click", function () {
+  mouseDraggedRed();
+});
 
-
-
-  
-  // https://conwaylife.appspot.com/library
-  // https://www.samcodes.co.uk/project/game-of-life/
-  // https://medium.com/@ianschum/chromacon-a-highly-interactive-conways-game-of-life-built-in-javascript-627153f459ec

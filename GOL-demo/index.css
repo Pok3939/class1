@@ -1,11 +1,62 @@
 /* body {
   position: relative;
 } */
+body {
+  display: flex;
+  flex-direction: row;
 
-button {
-  width: 10rem;
 }
 
+/* button {
+  width: 10rem;
+} */
+
+
+.background{
+  position: fixed;
+  z-index: 1;
+  /* width: 80vw;
+  height: 80vh; */
+  display: flex;
+  align-items: flex-end;
+}
+
+.container{
+  position: fixed;
+  z-index: 2;
+}
+
+
+.TTM{
+  z-index: 2;
+  margin-left: 65vw;
+  margin-top: 15vh;
+}
+
+.TTM h5 {
+  color: #fff;
+  font-family: "Press Start 2P";
+  overflow: hidden;
+  /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid rgb(255, 255, 255);
+  /* The typwriter cursor */
+  white-space: nowrap;
+  /* Keeps the content on a single line */
+  margin: 0 auto;
+  /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.15em;
+  /* Adjust as needed */
+  animation: typing 3s steps(20, end), blink-caret 0.5s step-end infinite;
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+}
+
+.progress{
+  height: 1.5rem;
+}
+.progress-bar{
+  background-color: rgb(211, 23, 201);
+}
 .sButton {
   display: flex;
   justify-content: center;
@@ -15,6 +66,7 @@ button {
   z-index: 20;
   margin-top: 70vh;
 }
+
 .btnbtn-dark {
   background-color: Black;
   color: white;
@@ -33,16 +85,84 @@ button {
   /* box-shadow: inset 0 0 15px 5px #000000; */
 }
 
+.changeRed {
+  background-color: Red;
+  border-width: 0.02rem;
+}
+
+.changeBlue {
+  background-color: blue;
+  border-width: 0.02rem;
+}
+
+.changeYellow {
+  background-color: Yellow;
+  border-width: 0.02rem;
+}
+
+.changePurple {
+  background-color: Purple;
+  border-width: 0.02rem;
+}
+
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
+.colorChoice{
+  color: white;
+  font-weight: bold;
+  font-family: "Press Start 2P";
+}
+.colorBox{
+  margin-right: 45%;
+  background-color: rgb(87, 87, 87); 
+  padding: 0.2rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-around;
+}
+.colorButton2{
+  margin-left: 0.3rem;
+}
+.colorButton2 button {
+  height: 2rem;
+  width: 2rem;
+}
+
 
 .buttonBox {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  width: 50vw;
+}
+
+.buttonBox button {
+  background-color: rgb(87, 87, 87);
+  color: white;
+  /* position: fixed;
+  z-index: 20;
+  margin-top: 70vh; */
+  /* font-size: 7rem; */
+  text-transform: uppercase;
+  font-weight: bold;
+  display: inline;
+  text-align: center;
+  font-family: "Press Start 2P";
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-radius: 0.3rem;
+  border-style: none !important;
+  /* background-color: gray !important;
+  border-style: none !important;
+  color: rgb(29, 29, 29) !important;
+  border-radius: 0;
+  padding: 0.5rem;
+  width: 10rem;
+  box-shadow: none; */
 }
 
 .cover {
@@ -69,6 +189,8 @@ button {
   opacity: 0.7;
 }
 
+
+
 h1 {
   display: flex;
   justify-content: center;
@@ -83,43 +205,56 @@ h1 {
   animation-iteration-count: infinite;
   animation-timing-function: ease-out;
 }
+
 @keyframes shake {
   0% {
     transform: translate(1px, 1px) rotate(0deg);
   }
+
   1% {
     transform: translate(1px, 1px) rotate(0deg);
   }
+
   2% {
     transform: translate(1px, 1px) rotate(0deg);
   }
+
   3% {
     transform: translate(1px, 1px) rotate(0deg);
   }
+
   4% {
     transform: translate(1px, 1px) rotate(0deg);
   }
+
   5% {
     transform: translate(1px, 1px) rotate(0deg);
   }
+
   6% {
     transform: translate(1px, 1px) rotate(0deg);
   }
+
   7% {
     transform: translate(1px, 1px) rotate(0deg);
   }
+
   8% {
     transform: translate(1px, 1px) rotate(0deg);
   }
+
   9% {
     transform: translate(1px, 1px) rotate(0deg);
   }
+
   10% {
     transform: translate(1px, 1px) rotate(0deg);
   }
+
   50% {
     transform: translate(0px, 0px) rotate(0deg);
   }
+
   55% {
     transform: translate(-3px, 0px) rotate(1deg);
   }
@@ -127,6 +262,7 @@ h1 {
   60% {
     transform: translate(-3px, 1px) rotate(0deg);
   }
+
   65% {
     transform: translate(3px, 2px) rotate(0deg);
   }
@@ -134,29 +270,39 @@ h1 {
   70% {
     transform: translate(3px, 1px) rotate(-1deg);
   }
+
   75% {
     transform: translate(1px, -1px) rotate(1deg);
   }
+
   80% {
     transform: translate(-1px, -1px) rotate(1deg);
   }
+
   90% {
     transform: translate(1px, 2px) rotate(0deg);
   }
+
   100% {
     transform: translate(1px, -2px) rotate(-1deg);
   }
 }
+
 /* https://www.w3schools.com/howto/howto_css_shake_image.asp */
 
 .typewriter h5 {
   color: #fff;
   font-family: "Press Start 2P";
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: 0.15em solid rgb(255, 255, 255); /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: 0.15em; /* Adjust as needed */
+  overflow: hidden;
+  /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid rgb(255, 255, 255);
+  /* The typwriter cursor */
+  white-space: nowrap;
+  /* Keeps the content on a single line */
+  margin: 0 auto;
+  /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.15em;
+  /* Adjust as needed */
   animation: typing 3s steps(20, end), blink-caret 0.5s step-end infinite;
   margin-top: 5rem;
 }
@@ -166,6 +312,7 @@ h1 {
   from {
     width: 0;
   }
+
   to {
     width: 100%;
   }
@@ -173,12 +320,20 @@ h1 {
 
 /* The typewriter cursor effect */
 @keyframes blink-caret {
+
   from,
   to {
     border-color: transparent;
   }
+
   50% {
     border-color: rgb(255, 255, 255);
   }
 }
+
+.progress{
+  width: 20vw;
+}
+
+
 /* https://fonts.google.com/specimen/Press+Start+2P */
