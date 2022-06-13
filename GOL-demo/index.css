@@ -1,36 +1,21 @@
-/* body {
-  position: relative;
-} */
-body {
-  display: flex;
-  flex-direction: row;
-
-}
-
-/* button {
-  width: 10rem;
-} */
-
-
-.background{
+.background img {
   position: fixed;
   z-index: 1;
-  /* width: 80vw;
-  height: 80vh; */
-  display: flex;
-  align-items: flex-end;
+  width: 100vw;
+  height: 100vh;
 }
 
-.container{
-  position: fixed;
+.container {
+  position: relative;
   z-index: 2;
+  width: 100vw;
+  height: 100vh;
 }
 
-
-.TTM{
+.TTM {
   z-index: 2;
-  margin-left: 65vw;
-  margin-top: 15vh;
+  /* margin-left: 55vw;
+  margin-top: 15vh; */
 }
 
 .TTM h5 {
@@ -51,11 +36,13 @@ body {
   margin-bottom: 1rem;
 }
 
-.progress{
+.progress {
   height: 1.5rem;
+  width: 20vw;
 }
-.progress-bar{
+.progress-bar {
   background-color: rgb(211, 23, 201);
+  color: transparent;
 }
 .sButton {
   display: flex;
@@ -86,22 +73,22 @@ body {
 }
 
 .changeRed {
-  background-color: Red;
+  background-color: rgb(1, 242, 1);
   border-width: 0.02rem;
 }
 
 .changeBlue {
-  background-color: blue;
+  background-color: rgb(38, 167, 251);
   border-width: 0.02rem;
 }
 
 .changeYellow {
-  background-color: Yellow;
+  background-color: rgb(241, 201, 3);
   border-width: 0.02rem;
 }
 
 .changePurple {
-  background-color: Purple;
+  background-color: rgb(221, 23, 135);
   border-width: 0.02rem;
 }
 
@@ -111,28 +98,27 @@ body {
   align-items: center;
   flex-direction: column;
 }
-.colorChoice{
+.colorChoice {
   color: white;
   font-weight: bold;
   font-family: "Press Start 2P";
 }
-.colorBox{
+.colorBox {
   margin-right: 45%;
-  background-color: rgb(87, 87, 87); 
+  background-color: rgb(87, 87, 87);
   padding: 0.2rem;
   margin-bottom: 1rem;
   border-radius: 0.5rem;
   display: flex;
   justify-content: space-around;
 }
-.colorButton2{
+.colorButton2 {
   margin-left: 0.3rem;
 }
 .colorButton2 button {
   height: 2rem;
   width: 2rem;
 }
-
 
 .buttonBox {
   display: flex;
@@ -188,8 +174,6 @@ body {
   z-index: 12;
   opacity: 0.7;
 }
-
-
 
 h1 {
   display: flex;
@@ -320,7 +304,6 @@ h1 {
 
 /* The typewriter cursor effect */
 @keyframes blink-caret {
-
   from,
   to {
     border-color: transparent;
@@ -331,15 +314,11 @@ h1 {
   }
 }
 
-.progress{
-  width: 20vw;
-}
-
-.slidecontainer{
+.slidecontainer {
   z-index: 2;
   margin-top: 6rem;
 }
-.slidecontainer h6{
+.slidecontainer h6 {
   color: white;
   font-weight: bold;
   font-family: "Press Start 2P";
@@ -348,12 +327,12 @@ h1 {
   -webkit-appearance: none;
   width: 100%;
   height: 15px;
-  border-radius: 5px;  
+  border-radius: 5px;
   background: #d3d3d3;
   outline: none;
   opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
 }
 
 .slider::-webkit-slider-thumb {
@@ -361,8 +340,8 @@ h1 {
   appearance: none;
   width: 25px;
   height: 25px;
-  border-radius: 50%; 
-  background: #04AA6D;
+  border-radius: 50%;
+  background: #04aa6d;
   cursor: pointer;
 }
 
@@ -370,6 +349,6 @@ h1 {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: #04AA6D;
+  background: #04aa6d;
   cursor: pointer;
 }
